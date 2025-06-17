@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useRef } from 'react';
 import '../assets/Payslip.css';
 import { NavLink, useNavigate } from 'react-router';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 const Payslip = () => {
+    const contentRef = useRef(null) 
     const navitohome = useNavigate()
     const [employeeData, setEmployeeData] = useState(null);
     useEffect(() => {
@@ -15,10 +18,23 @@ const Payslip = () => {
         localStorage.removeItem("crntemployee_details")
         navitohome("/home")
     }
+    const capture = () =>{
+            html2canvas(contentRef.current || document.body).then(canvas => {
+                const imgdata = canvas.toDataURL('image/png')
+    
+                const pdf = new jsPDF({
+                    orientation : 'portrait',
+                    unit : 'mm'
+                })
+                const imgWidth = 210;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                pdf.addImage(imgdata, 'PNG', 0, 0, imgWidth, imgHeight);
+                pdf.save('payslip.pdf');
+            })
+        }
     
     return (
         <div className="d-md-flex">
-            {/* Sidebar */}
             <div className="sidebars bg-dark text-white p-4">
                 <ul className="nav flex-column">
                    <li className="nav-item mb-3">
@@ -35,14 +51,11 @@ const Payslip = () => {
                     </li>
                 </ul>
             </div>
-
-            {/* Main Content */}
             <div className="main-content flex-grow-1 mt-2 p-4">
                 <h2 className="mb-4 paysliphead fw-bold text-center pb-3">Payslip Details</h2>
 
                {employeeData &&  <div className="card mx-auto">
                     <div className="card-body" style={{background:"#fff3cd"}}>
-                        {/* Employee Details Section */}
                         <div className="row mb-4">
                             <div className="col-md-6">
                                 <div className="mb-3">
@@ -79,8 +92,6 @@ const Payslip = () => {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Salary Table */}
                         <div className="table-responsive">
                             <table className="table">
                                 <thead className="bg-warning">
@@ -101,7 +112,7 @@ const Payslip = () => {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>{employeeData.emp_id}</td>
+                                        <td >{employeeData.emp_id}</td>
                                         <td>{employeeData.emp_name}</td>
                                         <td>{employeeData.salary}</td>
                                         <td>{employeeData.total}</td>
@@ -111,16 +122,12 @@ const Payslip = () => {
                                 </tbody>
                             </table>
                         </div>
-
-                        {/* Total Earnings */}
                         <div className="text-end mt-4 mb-4">
                             <h5>Total Earnings: ₹ {`${Number(employeeData.total)+Number(employeeData.addition)-Number(employeeData.deduction)}`}</h5>
                         </div>
-
-                        {/* Action Buttons */}
                         <div className="text-center">
                             <button className="btn btn-warning me-2" onClick={()=>saveclick()}>Save</button>
-                            <button className="btn btn-dark">Download</button>
+                            <button className="btn btn-dark" onClick={()=>capture()}>Download</button>
                         </div>
                     </div>
                 </div>}

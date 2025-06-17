@@ -11,7 +11,7 @@
 
 .input-group-text,
 .form-control {
-    border-radius: 12px;
+    border-radius: 15px;
 }
 
 .form-control:focus {
@@ -29,6 +29,9 @@
     background-color: #ffca2c;
     border-color: #ffc720;
     color: #000;
+}
+.loginform{
+    border-radius: 0px !important;
 }
 @media (min-width:767px) and (max-width:1023px) {
     .loginlogo{

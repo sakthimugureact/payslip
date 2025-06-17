@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../assets/Payroll.css';
 import { NavLink, useNavigate } from 'react-router';
 import useForm from '../Hooks/useForm';
 
+
 const Payroll = () => {
+    
     const navitiopayslip = useNavigate()
     const {formValidation,values,err,validateForm,handlereset} = useForm();
     const formSubmit = (e) => {
@@ -20,9 +22,9 @@ const Payroll = () => {
             navitiopayslip("/payslip")
         }
     };
+    
     return (
         <div className="d-md-flex">
-            {/* Sidebar */}
             <div className="sidebarr bg-dark text-white p-4">
                 <ul className="nav flex-column">
                       <li className="nav-item mb-3">
@@ -39,8 +41,6 @@ const Payroll = () => {
                                         </li>
                 </ul>
             </div>
-
-            {/* Main Content */}
             <div className="main-content flex-grow-1 p-4">
                 <div className="d-md-flex justify-content-between align-items-center mb-4">
                     <h2 className='payrollhead fw-semibold'>Payroll Details</h2>
@@ -80,8 +80,6 @@ const Payroll = () => {
                                         {err.emp_id && <p style={{ color: 'red' }}>{err.emp_id}</p>}
                                     </div>
                                 </div>
-
-                                {/* Second Row */}
                                 <div className="col-md-4">
                                     <div className="form-group">
                                         <label className="form-label">Date</label>
@@ -104,8 +102,6 @@ const Payroll = () => {
                                         {err.total && <p style={{ color: 'red' }}>{err.total}</p>}
                                     </div>
                                 </div>
-
-                                {/* Third Row */}
                                 <div className="col-md-4">
                                     <div className="form-group">
                                         <label className="form-label">No of Working Days</label>
@@ -128,7 +124,6 @@ const Payroll = () => {
                                     </div>
                                 </div>
 
-                                {/* Fourth Row */}
                                 <div className="col-md-4">
                                     <div className="form-group">
                                         <label className="form-label">Additions</label>
@@ -144,7 +139,6 @@ const Payroll = () => {
                                     </div>
                                 </div>
 
-                                {/* Buttons */}
                                 <div className="col-12 text-center d-flex justify-content-center gap-5 my-5">
                                     <button type="submit" className="btn btn-warning me-2 px-4">Submit Payroll</button>
                                     <button type="button" onClick={handlereset} className="btn btn-dark px-4">Cancel</button>
