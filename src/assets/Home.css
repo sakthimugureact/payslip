@@ -1,0 +1,110 @@
+.sidebar {
+    width: 400px !important;
+    min-height: 100vh;
+}
+
+.main-content {
+    min-height: 100vh;
+}
+.topbox{
+    background-color: #F8CC14;
+    border-radius: 10px;
+}
+.card {
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.meeting-item {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.meeting-item:hover {
+    transform: translateY(-2px);
+}
+
+.react-calendar {
+    width: 100%;
+    border: none;
+    font-family: inherit;
+}
+
+.react-calendar__tile--active {
+    background: #ffc107 !important;
+    color: black !important;
+}
+
+.react-calendar__tile--now {
+    background: #ffc107;
+    border-radius: 70%;
+    color:white;
+    font-weight: bold;
+}
+.lefticons{
+    text-decoration: none;
+}
+
+.second-rows{
+    background-color: #fef5d0;
+    border-radius: 10px;
+}
+.second-row{
+    margin: auto;
+    background-color: #fef5d0;
+    border-radius: 10px;
+}
+
+@media (min-width:1024px) and (max-width:1439px) {
+    .total{
+        font-size: 18px !important;
+    }
+    .meet{
+        font-size: 18px !important;
+    }
+}
+@media (min-width:601px) and (max-width:1023px) {
+    .total{
+        font-size: 10px !important;
+    }
+    .meet{
+        font-size: 18px !important;
+    }
+    .iconsfont{
+        font-size: 40px !important;
+    }
+    .iconsfonts{
+        font-size: 15px !important;
+    }
+    .calenhead{
+        font-size: 15px !important;
+    }
+    .calender{
+        font-size: 10px !important;
+    }
+    .meet-title{
+        font-size: 15px !important;
+    }
+    .meet{
+        font-size: 10px !important;
+    }
+    .wishes{
+        font-size: 20px !important;
+    }
+}
+@media (max-width:600px) {
+.sidebar {
+    width: 100% !important;
+    min-height: 100%;
+}
+ .meet-title{
+        font-size: 15px !important;
+    }
+.meet{
+    font-size: 10px !important;
+}
+.order{
+    flex-direction: column;
+}
+}

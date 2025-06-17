@@ -1,0 +1,57 @@
+.sidebarr {
+    width: 365px;
+    min-height: 100vh;
+}
+
+.main-content {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.form-label{
+    font-size: 18px;
+    font-weight: 600;
+}
+.form-control {
+    border-radius: 0px;
+}
+.payrollhead{
+  font-family: "Quicksand", sans-serif;
+  
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #000;
+}
+
+.btn-warning:hover {
+    background-color: #ffca2c;
+    border-color: #ffc720;
+    color: #000;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.btn-dark:hover {
+    background-color: #23272b;
+    border-color: #1d2124;
+}
+@media (max-width:600px) {
+.sidebarr {
+    width: 100%;
+    min-height: 100%;
+}
+.formbox{
+    width: 100% !important;
+}
+
+}

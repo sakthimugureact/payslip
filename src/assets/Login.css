@@ -1,0 +1,42 @@
+.loginbg{
+    background-image: url('/public/images/loginpage/loginbg.jpg');
+}
+.loginhead{
+  font-family: "Quicksand", sans-serif;
+  
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.input-group-text,
+.form-control {
+    border-radius: 12px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #dee2e6;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #000;
+}
+
+.btn-warning:hover {
+    background-color: #ffca2c;
+    border-color: #ffc720;
+    color: #000;
+}
+@media (min-width:767px) and (max-width:1023px) {
+    .loginlogo{
+        max-width: 300px !important;
+    }
+}
+@media (max-width:600px) {
+    .loginlogo{
+        max-width: 220px !important;
+    }
+}

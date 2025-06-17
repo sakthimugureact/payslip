@@ -1,0 +1,62 @@
+.sidebars {
+    width: 190px;
+    min-height: 100vh;
+}
+
+.main-content {
+    min-height: 100vh;
+    background-color: #fff;
+}
+.paysliphead{
+  font-family: "Quicksand", sans-serif;
+  
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.table th {
+    border: 1px solid #dee2e6;
+    background-color: #ffc107;
+    color: #000;
+}
+
+.table td {
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #000;
+}
+
+.btn-warning:hover {
+    background-color: #ffca2c;
+    border-color: #ffc720;
+    color: #000;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background-color: #23272b;
+    border-color: #1d2124;
+}
+@media (max-width:600px) {
+.sidebars {
+    width: 100%;
+    min-height: 100%;
+}
+.formbox{
+    width: 100% !important;
+}
+
+}
